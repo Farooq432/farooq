@@ -1,0 +1,23 @@
+public class BinarySearchTree extends BinaryTree
+{
+   public void insert (int item)
+   { 
+   BinarytreeNode current;
+   BinaryTreeNode trailCurrent = null;
+   BinaryTreeNode newNode;
+   
+   newNode = new BinaryTreeNode();
+   
+   newNode.info = item;
+   newNode.llink=null;
+   newNode.rlink = null;
+   
+   if ( root ==null)
+   root = newNode;
+   
+   else
+        {     
+        }
+   }
+   
+}
