@@ -2,8 +2,8 @@ public class BinarySearchTree extends BinaryTree
 {
    public void insert (int item)
    { 
-   BinarytreeNode current;
-   BinaryTreeNode trailCurrent = null;
+   BinarytreeNode curr;
+   BinaryTreeNode trailCurr= null;
    BinaryTreeNode newNode;
    
    newNode = new BinaryTreeNode();
@@ -16,8 +16,123 @@ public class BinarySearchTree extends BinaryTree
    root = newNode;
    
    else
-        {     
+        {  
+        curr == root;
+        while ( curr !=null)
+        { 
+        trailCurr= Curr;
+        if (curr.info == item)
+        {
+        system.err.prinnt (" item already exits");
+        return;
         }
+        else
+            
+            {
+               if (curr.info>item)
+               curr=curr.llink;
+               
+               else
+               curr=curr.rlink;
+            }
+   }
+   
+   if ( trailcurr.info>item )
+     trailcurr.llink = newNode;
+     else
+        trailCurr.rlink = newNode;
+     }
+}
+
+
+public void delete ( int item)
+
+{
+   BinaryTreeNode Curr;
+   BinaryTreeNode trailCurr;
+  
+  bool found = false;
+  
+  if (root == null)
+  system.err.println ("cannot delete any tree");
+  
+  else
+  {
+   curr=root;
+   
+   while ( curr != null && !found)
+   {
+       if ( curr.info==item)
+       found = true;
+       
+       else
+       {
+         trailCurr = Curr;
+         
+         if ( curr.info >item)
+          Curr= Curr.llink;
+          
+          else
+           Curr = Curr.rlink;
+           }
+   }
+
+ if ( Curr== null)
+   System.out.println ( "Delete item is not in the list");
+   
+   else
+       if  found)
+         {
+           if ( Curr==root)
+              root = deleteNode( root);
+              else
+                 if ( trailCurr.info >item)
+                 
+                 trailCurr.llink = deleteNode( trailCurr.llink);
+                 else 
+                    trailCurr.rlink=deleteNode(trailCurr.rlink);
+                    }
+         
+         }
+         
+   }
+   
+   private BinaryTreeNode deleteNode ( BinaryTreeNode n)
+   {
+    BinaryTreeNode Curr;
+    BinaryTreeNode trailCurr;
+    
+    if ( n == null)
+       system.err.println ( " Error: Delete node");
+         else if ( n.llink == null && n.rlink == null)
+          
+           n=null;
+           else if   (n.llink==null)
+           n=n.rlink;
+           else if ( n.rlink==null)
+            n=n.llink;
+         else
+            
+             {
+             Curr= n.llink;
+             trailCurr = null;
+             while ( Curr.rlink !=null)
+             
+             {
+                trailCurr = Curr;
+                Curr = Curr.rlink;
+            }
+             
+             n.info = Curr.info;
+             
+             if ( trailCurr == null)
+               n.llink = Curr.llink;
+               
+            else
+                 trailCurr.rlink = Curr.llink;
+         }
+         
+         return n;
    }
    
 }
